@@ -1,0 +1,814 @@
+/* default variables */
+:root {
+  --font-family-sans:          ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-serif:         ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-family-mono:          ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --default-font-size:         16px;
+
+  --default-text-colour:       #000000;
+  --default-surface-colour:    #ffffff;
+
+  --default-min-device:        320px;  /* 22.5rem */
+
+  --default-margin:            1em;
+  --default-padding:           1em;
+
+  --default-column-gap:        1em;
+
+  --header-colour:             #000000;
+  --header-background-colour:  #ffffff;
+  --header-links-colour:       #0000ff;
+
+  --footer-colour:             #000000;
+  --footer-background-colour:  #ffffff;
+  --footer-links-colour:       #0000ff;
+
+
+  --size-300: 0.75rem;
+  --size-400: 1rem;
+  --size-500: 1.33rem;
+  --size-600: 1.77rem;
+  --size-700: 2.36rem;
+  --size-800: 3.15rem;
+  --size-900: 4.2rem;
+
+
+  --theme-color: #663399;
+  --theme-color: rgb(102,51,153);
+  --theme-color: rebeccapurple;
+  --theme-bg-color: rgba(102,51,153,0.1);
+
+  --white: #FFFFFF;
+  --grey: #EBEBEB;
+  --black: #000000;
+
+  --pastel-red: #FFCDD2;
+  --pastel-orange: #FFE0B2;
+  --pastel-yellow: #FFF9C4;
+  --pastel-green: #DCEDC8;
+  --pastel-blue: #B3E5FC;
+  --pastel-indigo: #EEE7f3;
+  --pastel-violet: #FBE8FB;
+
+
+
+}
+/* modern reset styles (https://piccalil.li/blog/a-modern-css-reset/) */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+/* Make images easier to work with, # GrB: added SVG */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: blue;
+  fill: blue;
+}
+/* default accessibility styles */
+/* modern accessibility link https://www.youtube.com/watch?v=jDDaOFr9nqQ */
+.skip-link {
+  color: magenta;
+  background: black;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0 0 0.25rem 0.25rem;
+  left: 1rem;
+  position: absolute;
+  transform: translateY(-120%);
+  transition: transform 420ms ease-in;
+}
+.skip-link:focus {
+  position: absolute;
+  transform: translateY(0);
+}
+.skip-link-text {
+
+}
+/* SORT OUT BELOW */
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  -webkit-clip-path: inset(100%); 
+          clip-path: inset(100%); 
+  height: 1px; 
+  overflow: hidden; 
+  position: absolute; 
+  white-space: nowrap; 
+  width: 1px; 
+}
+.focus {
+}
+/* https://tailwindcss.com/docs/screen-readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+.not-sr-only {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+/* applies a magenta outline to links only when focused via keyboard */
+a:focus-visible {
+ outline: 2px solid magenta;
+}
+/* https://moderncss.dev/modern-css-upgrades-to-improve-accessibility/*/
+button:focus {
+  outline: max(1px, 0.1em) dashed currentColor;
+  outline-offset: -0.25em;
+}
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+button:focus-visible {
+  outline: max(1px, 0.1em) dashed currentColor;
+  outline-offset: -0.25em;
+}
+a:focus {
+  outline: auto 5px Highlight; /* for non-webkit browsers */
+  outline: auto 5px -webkit-focus-ring-color; /* for webkit browsers */
+}
+.visually-hidden {
+  position: absolute !important;
+}
+.visually-hidden {
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  color: red;
+}
+.visually-hidden:focus {
+  position: static !important;
+  position: initial !important;
+}
+/* default native accordian styles (see MDN) */
+details {
+  overflow: hidden;
+  margin-top: 0.25em;
+  border: 1px solid #aaa;
+  border-radius: 0.25em;
+  padding: .5em .5em 0;
+  background-color: #FFFFFF;
+  color: #333333;
+}
+summary {
+  display: block;
+  cursor: pointer;
+  padding: .5em .5em .5em .7em;
+  background: #ededed;
+  color: #2b2b2b;
+  font-weight: bold;
+  margin: -.5em -.5em 0;
+  border-radius: 3px 3px 0 0;
+}
+summary:after {
+  content: "+";
+  color: #FFFFFF;
+  float: left;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: -5px 5px 0 0;
+  padding: 0;
+  text-align: center;
+  width: 20px;
+}
+details[open] summary:after {
+  content: "-";
+ color: #FFFFFF
+}
+details[open] {
+  padding: .5em;
+  background-color: #ebebeb;
+}
+details[open] section {
+  border-bottom: 1px solid #aaa;
+  margin-bottom: .5em;
+}
+/*
+details:not([open]) summary:hover,
+details:not([open]) summary:focus {      
+  background: #f6f6f6;
+  color: #454545;
+}
+details[open] summary {
+  border: 1px solid #003eff;
+  background: #007fff;
+  color: #ffffff;
+}
+details p {
+  padding: 1em 2em;
+}
+*/
+/* default animationms styles */
+.xxx-body {
+  animation: 420ms fadeIn ease;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes rotateClockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateAnticlockwise {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+/* modern back to top link styles (https://www.) */
+.btt-link {
+  color: magenta;
+  background: black;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0 0 0.25rem 0.25rem;
+  right: 1rem;
+  position: absolute;
+  transform: translateX(120%);
+  transition: transform 420ms ease-in;
+}
+.btt-link:focus {
+  position: absolute;
+  transform: translateX(0);
+}
+.btt-link-text {
+
+}
+/* default button styles */
+.btn {
+
+}
+.btn-primary {
+
+}
+.btn-primary-hover {
+
+}
+.btn-disabled {
+
+}
+.btn-secondary {
+
+}
+.btn-secondary-hover {
+
+}
+.btn-tertiary {
+
+}
+.btn-tertiary-hover {
+
+}
+/*  Button Ripple (for Mobile)          */
+/*  C:\Users\Home\Desktop\RAINBOW\geoffb mobile friendly button ripple.html */
+/*  Add into button styles example page */
+.ripple {
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+}
+.ripple:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform 0.5s, opacity 1s;
+  }
+.ripple:active:after {
+    transform: scale(0, 0);
+    opacity: 0.3;
+    transition: 0s;
+  }
+/* default content styles */
+body {
+  font-family: var(--font-family-sans);
+  font-size: var(--default-font-size);
+  font-size: max(var(--default-font-size), 1em);
+  line-height: 1.5;
+  color: var(--default-text-colour);
+  background-color: var(--default-surface-colour);
+  min-width: var(--default-min-device);
+}
+/* default footer styles */
+footer {
+  color: var(--footer-colour);
+  background-color: var(--footer-background-colour);
+  padding: var(--default-padding);
+}
+.footer-links {
+  width: 100%;
+  max-width: 100%;
+  padding: var(--default-padding);
+}
+.footer-links a {
+  color: var(--footer-links-colour);
+}
+.footer-content {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: var(--default-column-gap);
+  -moz-column-gap: var(--default-column-gap);
+       column-gap: var(--default-column-gap);
+  text-align: center;
+}
+.footer-content div p {
+  margin-botton: 0;
+}
+@media only screen and (min-width: 576px) {
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-content div:nth-child(1) {
+    padding: var(--default-padding);
+    text-align: left;
+  }
+  .footer-content div:nth-child(2) {
+    padding: var(--default-padding);
+    text-align: right;
+  }
+}
+.footer-copyright {
+}
+.footer-timestamp {
+}
+/* default header styles */
+header {
+  color: var(--header-colour);
+  background-color: var(--header-background-colour);
+  padding: var(--default-padding);
+}
+.header-links {
+  width: 100%;
+  max-width: 100%;
+  padding: var(--default-padding);
+}
+.header-links a {
+  color: var(--header-links-colour);
+}
+.header-content {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: var(--default-column-gap);
+  -moz-column-gap: var(--default-column-gap);
+       column-gap: var(--default-column-gap);
+}
+.header-content div p {
+  margin-botton: 0;
+}
+.header-content div:nth-child(1) {
+  padding: var(--default-padding);
+  text-align: left;
+}
+.header-content div:nth-child(2) {
+  padding: var(--default-padding);
+  text-align: right;
+}
+.header-brand {
+}
+.header-menu {
+}
+.header-testing-guide {
+  padding: var(--default-padding);
+  text-align: left;
+}
+.header-testing-guide p {
+  margin-botton: 0;
+}
+/* default SVG Icon styles */
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: blue;
+  fill: blue;
+}
+/* default image styles (Jan 2021 https://www.zachleat.com/web/fluid-images/) */
+img {
+  max-width: 100%;
+}
+/* preserve aspect ratio */
+img[width][height] {
+  height: auto;
+}
+/* let SVG scale without boundaries */
+img[src$=".svg"] {
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+/* default layout styles */
+body {
+  min-width: var(--min-device);
+}
+main {
+  padding: 1em;  
+}
+/* three columns, content in center column (track two) equal width gutters */
+.cssgrid-content {
+  display: grid;
+  grid-template-columns: 1fr min(82ch, 100% - 2ch) 1fr;
+}
+.cssgrid-content > * {
+  grid-column: 2;
+  outline: 1px dashed magenta;
+  /* for testing only */
+}
+/* full width breakout */
+.cssgrid-fullwidth {
+  width: 100%;
+  grid-column: 1/-1;
+  background-color: AliceBlue;
+  /* for testing only */
+  margin-bottom: 1em;
+  /* for testing only */
+}
+/* vertical and horizontal center */
+.modern-center {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  place-items: center;
+}
+/* SORT OUT BELOW */
+/* Chris Coyier Updated on Nov 17 2021 https://css-tricks.com/a-clever-sticky-footer-technique/ */
+html, body {
+  height: 100%;
+}
+body > footer {
+  position: sticky;
+  top: 100vh;
+}
+/* flow - https://andy-bell.co.uk/my-favourite-3-lines-of-css/ */
+.flow > * + * {
+  margin-top: 1em;
+  margin-top: var(--flow-space, 1em);
+}
+/* centralised */
+.center-parent {
+  position: relative;
+}
+.center-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+/* central column blog style */
+main .blog-style {
+  width: min(65ch, 100% - 4rem);
+  margin-left: auto;
+  margin-right: auto;
+}
+/* one column */
+/* two column */
+/* four column */
+/* gallery columns */
+/* default link styles */
+.lnk {
+  padding-left: 0.5em;
+  background-color: #ecfcb1;
+}
+a {
+  outline: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+a:focus {
+  background-color: #ebebeb;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+a:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+.lnk-internal::after {
+  x-padding-left: 0.5em;
+  content: "" url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z'/%3E%3Cpath d='M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z'/%3E%3C/svg%3E");
+}
+.lnk-external-icon::after {
+  x-padding-left: 0.5em;
+  content: "" url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z'/%3E%3Cpath fill-rule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z'/%3E%3C/svg%3E");
+}
+.lnk-external-text::after {
+  x-padding-left: 0.5em;
+  content: " (external)";
+}
+/* default link styles (see MDN) */
+.dialogue-todo {
+}
+dialogue {
+
+}
+/* default shape styles (http://apps.eky.hk/css-triangle-generator/) */
+.arrow-outline {
+  display: inline-block;
+  border-style: solid;
+  border-color: var(--colour-accent);
+  border-width: 0 0.25rem 0.25rem 0;
+  padding: 0.25rem;
+}
+.arrow-right {
+  transform: rotate(-45deg);
+}
+.arrow-left {
+  transform: rotate(135deg);
+}
+.arrow-up {
+  transform: rotate(-135deg);
+}
+.arrow-down {
+  transform: rotate(45deg);
+}
+.carat-outline {
+  display: inline-block;
+  border-style: solid;
+  border-color: transparent;
+  width: 0;
+  height: 0;
+}
+.carat-up {
+  border-width: 0 0.5rem 0.869rem 0.5rem;
+  border-bottom-color: var(--colour-accent);
+  /*border-color: transparent transparent magenta transparent;*/
+}
+.carat-right {
+  border-width: 0.5rem 0 0.5rem 0.869rem;
+  border-left-color: var(--colour-accent);
+  /*border-color: transparent transparent transparent magenta;*/
+}
+.carat-down {
+  border-width: 0.869rem 0.5rem 0 0.5rem;
+  border-top-color: var(--colour-accent);
+  /* border-color: magenta transparent transparent transparent; */
+}
+.carat-left {
+  border-width: 0.5rem 0.869rem 0.5rem 0;
+  border-right-color: var(--colour-accent);
+  /*border-color: transparent magenta transparent transparent;*/
+}
+/* default skip link styles */
+/* default tab styles */
+.tab-todo {
+
+}
+/* default typography styles */
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 500;
+}
+h1, .h1 {
+  font-size: 1.75rem;
+  margin-bottom: 1.25em;
+}
+h2, .h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.1em;
+}
+h3, .h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75em;
+}
+h4, .h4 {
+  font-size: 1rem;
+  margin-bottom: 0.5em;
+}
+@media only screen and (min-width: 576px) {
+  h1, .h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0.75em;
+  }
+  h2, .h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.7em;
+  }
+  h3, .h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.65em;
+  }
+  h4, .h4 {
+    font-size: 1rem;
+    margin-bottom: 0.6em;
+  }
+}
+p {
+  margin-bottom: 0.5em;
+}
+.paragraph-lead {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.paragraph-info {
+  font-variant: small-caps;
+  padding: 1.25rem 0 0.5rem 0;
+  color: var(--colour-accent);
+}
+.paragraph-smallcaps {
+  font-variant: small-caps;
+}
+.paragraph-truncated {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* default utility styles */
+/* color pallette */
+.svg-pallette {
+  display: inline-block;
+  width: 96px;
+  height: 96px;
+}
+/* iframe style when used for HTML include */
+iframe.include {
+  width: 0;
+  height: 0;
+}
+/* SVG sprite */
+svg.sprite {
+
+}
+/* Font Styles */
+.sans  {
+  font-family: var(-sans);
+}
+.serif {
+  font-family: var(-serif);
+}
+.mono  {
+  font-family: var(-mono);
+}
+/* Tooltip "title" style */
+p[title] {
+  background-color: #F5F5F5;
+  color: #333;
+  font-size: 14px;
+}
+/* Text Alignment */
+.align-left {
+  text-align: left;
+}
+.align-center {
+  text-align: center;
+}
+.align-right {
+  text-align: right;
+}
+/* Margin */
+.m {
+
+}
+/* Padding */
+.p {
+
+}
+/* default POSTCSS testing styles */
+@custom-media --viewport-medium (width <= 50rem);
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;
+:root {
+  --mainColor: rgba(18,52,86,0.47059);
+}
+x-body {
+  color: var(--mainColor);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  word-wrap: break-word;
+}
+:--heading {
+  background-image: url(img/heading.png);
+  background-image: -webkit-image-set(url(img/heading.png) 1x, url(img/heading@2x.png) 2x);
+  background-image: image-set(url(img/heading.png) 1x, url(img/heading@2x.png) 2x);
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+:--heading {
+  background-image: url(img/heading@2x.png);
+}
+
+
+
+}
+@media (--viewport-medium) {
+:--heading {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+  }
+a {
+  color: rgba(0, 0, 255, 0.9);
+}
+a:hover {
+    color: #639;
+  }
+/* END TESTING STYLES ABC */
