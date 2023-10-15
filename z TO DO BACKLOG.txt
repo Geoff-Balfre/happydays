@@ -1,0 +1,28 @@
+
+
+split out CSS
+
+split out JS
+
+add styleguide
+
+
+move to eleventy
+
+
+add internal data page
+
+add external data page (plugin)
+
+add accessible navigation (plugin)
+
+add accessible breadcrumbs (plugin)
+
+add image page (plugin)
+
+add accessible accordian
+
+add accessible modal
+
+add accessible tabs
+

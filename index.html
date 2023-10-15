@@ -9,6 +9,8 @@
   <meta name="robots" content="SEO: The robots directive">
   <meta name="generator" content="Eleventy v2.0.1">
 
+  <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'none'"> -->
+
   <meta name="theme-color" content="#000000">
   <meta name="apple-mobile-web-app-status-bar" content="#000000">
 
@@ -17,7 +19,146 @@
   <link rel="apple-touch-icon" href="./apple-touch-icon.png">
 
   <link rel="manifest" href="./manifest.webmanifest" crossorigin="use-credentials">
+
   <link rel="stylesheet" href="./styles.css">
+
+<!-- ## new base styles here, see C:\Users\Home\Desktop\ANDY BELL\svg-icons-sprite.html ## -->
+
+<style>
+
+:root {
+  --font-family-sans:  ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-family-mono:  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --theme-color: #663399;
+  --theme-color: rgb(102,51,153);
+  --theme-color: rebeccapurple;
+  --theme-bg-color: rgba(102,51,153,0.1);
+
+  --success-color: green;
+  --warning-color: orange;
+  --error-color: red;
+  --outline-color: magenta;
+}
+
+
+
+var(--outline-color)
+
+
+
+
+/* CSS UTILITIES */
+
+.font-weights {
+}
+/*
+    style="font-weight:100;">Font weight 100</p>
+    style="font-weight:200;">Font weight 200</p>
+    style="font-weight:300;">Font weight 300</p>
+    style="font-weight:400;">Font weight 400 (default)</p>
+    style="font-weight:500;">Font weight 500</p>
+    style="font-weight:600;">Font weight 600</p>
+    style="font-weight:700;">Font weight 700 (bold)</p>
+    style="font-weight:800;">Font weight 800</p>
+    style="font-weight:900;">Font weight 900</p>
+*/
+
+.success-state {
+  color: green;
+}
+.warning-state {
+  color: orange;
+}
+.error-state {
+  color: red;
+}
+
+
+
+
+/*
+https://css-tricks.com/what-are-design-tokens/
+https://bootcamp.uxdesign.cc/simple-design-tokens-with-css-custom-properties-7ab69b71d8ad
+https://tokencss.com/
+CUBE css
+https://andy-bell.co.uk/cube-css/
+*/
+
+.columns {
+
+}
+.wrapper {
+
+}
+.flow {
+
+}
+.block{
+  display:block
+}    
+.lead {                 /* use a set of sizes for tokens */
+  font-size: 1.25em;
+}
+.info {                 /* use a color variable */
+  font-variant: small-caps;
+  color: var(--outline-color);
+}
+.outline { 
+  outline: 1px solid var(--outline-color);
+}
+.small {                /* use a set of sizes for tokens */
+  font-size: 0.85em;
+}
+.strong {               /* use a set of weights for tokens */ 
+  font-weight: 700;
+}
+.capitalize {
+  text-transform: capitalize
+}
+.small-capitals {
+  font-variant: small-caps;
+}
+.emphasis {
+  font-style: italic;
+}
+.truncated {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+.visually-hidden{
+  border:0;
+  clip:rect(0 0 0 0);
+  height:0;
+  margin:0;
+  overflow:hidden;
+  padding:0;
+  position:absolute;
+  width:1px;
+  white-space:nowrap
+}    
+.sprite-demo {
+  font-size: 150%;
+  text-align: center;
+  color: white;
+  background-color: #333;
+}
+.svg-icon {
+  position: relative;
+  top: .125em;
+  flex-shrink: 0;
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+}
+
+</style>
 
 </head>
 <body class="pages">
@@ -33,9 +174,7 @@
       <div class="header-menu">
         <p>
           <a href="/" class="menu" title="Menu link" aria-label="Menu link">
-            <svg style="vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
-            </svg> Menu
+            <svg class="svg-icon" role="img"><use xlink:href="sprite-symbol-defs.svg#svg-menu"></use></svg> Menu
           </a>
         </p>
       </div>
@@ -45,38 +184,76 @@
 
 
   <main id="main-content">
-    <section class="main-content">
+    <article class="main-content">
 
-      <p class="header-testing-guide" style="color:blue;">
-        <span class="page-date"></span>&nbsp;&nbsp;
-        <span class="page-viewport"></span>&nbsp;&nbsp;
-        <span class="page-ratio"></span>&nbsp;&nbsp;
-        <span class="page-device"></span>&nbsp;&nbsp;
-        <span class="page-browser"></span>&nbsp;&nbsp;
-        <span class="page-touched"></span>
+      <p class="header-testing-guide" style="font-size: 80%; color:teal;">
+        <span class="new-time-stamp"></span>&nbsp;
+        <span class="new-view-port"></span>&nbsp;
+        <span class="new-pixel-ratio"></span>&nbsp;
+        <span class="new-page-device"></span>&nbsp;
+        <span class="new-page-orientation"></span>&nbsp;
+        <span class="new-page-browser"></span>&nbsp;
+        <span class="new-page-locale"></span>&nbsp;
+        <span class="new-page-touched"></span>&nbsp;
       </p>
 
-     <h1>SEO: Home (Page)</h1>
-     <p class="paragraph-lead">Home (page) engagement text goes here</p>
-     <p>Home page content goes here...</p>
-     <p>Tue 29 Aug 2023 04:40:02 PM</p>
-     <h2>Latest Browser Versions 29 Aug 2023</h2>
-     <ul>
-       <li>Chrome 116</li>
-       <li>Safari 16.5</li>
-       <li>Edge 116</li>
-       <li>Firefox 116</li>
-       <li>Opera 101</li>
-     </ul>
+      <h1>SEO: Home (Page)</h1>
+      <p class="paragraph-lead">Home (page) engagement text goes here</p>
+      <p>Home page content goes here...</p>
+      <p>Tue 29 Aug 2023 04:40:02 PM</p>
+      <h2>Latest Browser Versions 29 Aug 2023</h2>
+      <ul>
+        <li>Chrome 116</li>
+        <li>Safari 16.5</li>
+        <li>Edge 116</li>
+        <li>Firefox 116</li>
+        <li>Opera 101</li>
+      </ul>
 
-     <hr>
+<hr>
 
-	 <p>&nbsp;<span id="heading"></span></p>
-     <p>&nbsp;<span id="body"></span></p>
+      <h2>Typography</h1>
+      <h3 class="[ info ]">Character Set:</h3>
+          <p>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</p>
+          <p>a b c d e f g h i j k l m n o p q r s t u v w x y z</p>
+          <p>¬ &#96; ! " £ $ € % ^ &amp; * ( ) _ + - =</p>
+          <p>{ } [ ] : @ ~ ; &#39; # | &#92; &lt; &gt; ? , . /</p>
+          <p>0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</p>
 
-	 <hr>
+      <h3 class="[ info ]">Font Weight:</h3>
+          <p class="h4" style="font-weight:100;">Font weight 100</p>
+          <p class="h4" style="font-weight:200;">Font weight 200</p>
+          <p class="h4" style="font-weight:300;">Font weight 300</p>
+          <p class="h4" style="font-weight:400;">Font weight 400 (default)</p>
+          <p class="h4" style="font-weight:500;">Font weight 500</p>
+          <p class="h4" style="font-weight:600;">Font weight 600</p>
+          <p class="h4" style="font-weight:700;">Font weight 700 (bold)</p>
+          <p class="h4" style="font-weight:800;">Font weight 800</p>
+          <p class="h4" style="font-weight:900;">Font weight 900</p>
 
-    </section>
+      <h3 class="[ info ]">Headings:</h3>
+          <h1>First heading style</h1>
+          <h2>Second heading style</h2>
+          <h3>Third heading style</h3>
+          <h4>Fourth heading style</h4>
+          <h5>Fifth heading style (not used)</h5>
+          <h6>Sixth heading style (not used)</h6>
+
+      <h3 class=" [ info ] ">Paragraphs:</h3>
+          <p class=" [ lead ] ">Lead paragraph style, Value proposition, engagement text goes here</p>
+          <p>Standard paragraph style, Today weather conditions will be mainly dry, very warm and often sunny. Isolated showers may break out during the afternoon in the east. Winds will be light and mainly offshore, but where onshore breezes develop it will feel cooler. Maximum temperature 26&#8451;. Tonight begins with some pleasant early evening sunshine is expected, then dry through the night with light variable winds. Feeling cooler near coasts. Minimum temperature 10&#8451;. Through Saturday morning there will be some sunny spells, but also the risk of a few showers. It will then cloud over with spells of rain pushing up from the south.</p>
+
+          <br>
+
+          <p class=" [ small ] ">This line is rendered as small text and meant to be treated as fine print</p>
+          <p class=" [ strong ] ">This line is rendered as bold text</p>
+          <p class=" [ capitalize ] ">this line is rendered as capitalized</p>
+          <p class=" [ small-capitals ] ">This line is rendered as Small capitals</p>
+          <p class=" [ emphasis ] ">This line is rendered as emphasis</p>
+          <p class=" [ truncated ] ">This long line is trucated with "ellipses" when there is insufficient space to show all of the content.</p>
+
+
+    </article>
   </main>
 
   <footer>
@@ -93,49 +270,5 @@
   </footer>
 
   <script src="./scripts.js"></script>
-  <script>
-//  Canada                  en
-//  Denmark                 da
-//  Finland                 fi
-//  France                  fr 
-//  Germany                 de
-//  Italy                   it
-//  Netherlands             nl
-//  Rest of Europe (EMEA)   en
-//  Rest of the world       en
-//  Spain                   es
-//  Sweden                  sv    
-//  United Kingdom          en
-//  United States           en   
-
-const language = (locale) => {
-  var lang = {
-    "en":  "CONFIRM YOUR IDENTITY|Please complete to continue",             // english (en-US, en-CA, en-GB)
-    "de":  "BESTÄTIGE DEINE IDENTITÄT|Ausfüllen, um fortzusetzen",          // german
-    "fr":  "CONFIRMEZ VOTRE IDENTITÉ|Complétez cette étape pour continuer", // french
-    "nl":  "BEVESTIG JE IDENTITEIT|Vul in om verder te gaan",               // dutch
-    "it":  "CONFERMA LA TUA IDENTITÀ|Per favore  completa per continuare",  // italian
-    "es":  "CONFIRMA TU IDENTIDAD|Completa este paso para continuar",       // spanish
-    "sv":  "BEKRÄFTA DIN IDENTITET|Slutför detta steg för att fortsätta",   // swedish
-    "fi":  "VAHVISTA HENKILÖLLISYYTESI|Täytä tietosi jatkaaksesi",          // finish
-    "da":  "BEKRÆFT DIN IDENTITET|Udfyld venligst for at fortsætte"         // danish
-  };
-  return (locale ? lang[locale] || lang["en"] : lang["en"] );
-}
-const userLocale = navigator.language.split('-')[0];
-const textString = language(userLocale).split('|');
-
-document.querySelector('#heading').innerHTML = textString[0];
-document.querySelector('#body').innerHTML = textString[1];
-
-console.log('');
-console.log("test 0: " + navigator.language); 
-console.log("test 1: " + userLocale); 
-console.log('');
-console.log("test 2: " + textString[0]);
-console.log("test 3: " + textString[1]);
-console.log('');
-
-</script>
 </body>
 </html>

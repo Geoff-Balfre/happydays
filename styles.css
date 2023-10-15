@@ -1,4 +1,6 @@
+
 /* default variables */
+
 :root {
   --font-family-sans:          ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-serif:         ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
@@ -7,7 +9,7 @@
   --default-font-size:         16px;
 
   --default-text-colour:       #000000;
-  --default-surface-colour:    #d4f7e3;
+  --default-surface-colour:    #ffffff;
 
   --default-min-device:        320px;  /* 22.5rem */
 
@@ -50,77 +52,91 @@
   --pastel-blue: #B3E5FC;
   --pastel-indigo: #EEE7f3;
   --pastel-violet: #FBE8FB;
-
-
-
 }
-/* modern reset styles (https://piccalil.li/blog/a-modern-css-reset/) */
+
+
+/* A (more) Modern CSS Reset */
+/* 18th of September 2023 */
+/* https://andy-bell.co.uk/a-more-modern-css-reset/ */
+
 /* Box sizing rules */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
   margin: 0;
 }
+
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role="list"],
-ol[role="list"] {
+ul[role='list'],
+ol[role='list'] {
   list-style: none;
 }
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
-}
+
 /* Set core body defaults */
 body {
   min-height: 100vh;
-  text-rendering: optimizeSpeed;
   line-height: 1.5;
 }
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-  -webkit-text-decoration-skip: ink;
-          text-decoration-skip-ink: auto;
+  text-decoration-skip-ink: auto;
+  color: currentColor;
 }
-/* Make images easier to work with, # GrB: added SVG */
+
+/* Make images easier to work with */
 img,
 picture {
   max-width: 100%;
   display: block;
 }
+
 /* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
+input, button,
+textarea, select {
   font: inherit;
 }
-/* Remove all animations and transitions for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-   scroll-behavior: auto;
-  }
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
 }
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+
+
+
+/* ?? MORE ?? */
+
 .icon {
   display: inline-block;
   width: 1em;
@@ -383,7 +399,9 @@ details p {
     opacity: 0.3;
     transition: 0s;
   }
+
 /* default content styles */
+
 body {
   font-family: var(--font-family-sans);
   font-size: var(--default-font-size);
@@ -393,7 +411,9 @@ body {
   background-color: var(--default-surface-colour);
   min-width: var(--default-min-device);
 }
+
 /* default footer styles */
+
 footer {
   color: var(--footer-colour);
   background-color: var(--footer-background-colour);
@@ -438,7 +458,9 @@ footer {
 }
 .footer-timestamp {
 }
+
 /* default header styles */
+
 header {
   color: var(--header-colour);
   background-color: var(--header-background-colour);
@@ -484,7 +506,9 @@ header {
 .header-testing-guide p {
   margin-botton: 0;
 }
+
 /* default SVG Icon styles */
+
 .icon {
   display: inline-block;
   width: 1em;
@@ -507,7 +531,9 @@ img[src$=".svg"] {
   height: auto;
   max-width: none;
 }
+
 /* default layout styles */
+
 body {
   min-width: var(--min-device);
 }

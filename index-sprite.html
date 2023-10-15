@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SEO: The page description">
+
+  <title>SEO: The page title, GrB</title>
+  <meta name="author" content="GrB">
+  <meta name="robots" content="SEO: The robots directive">
+  <meta name="generator" content="Eleventy v2.0.1">
+
+  <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'none'"> -->
+
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-status-bar" content="#000000">
+
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="icon" href="./favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+
+  <link rel="manifest" href="./manifest.webmanifest" crossorigin="use-credentials">
+
+  <link rel="stylesheet" href="./styles.css">
+
+<!-- ## new base styles here, see C:\Users\Home\Desktop\ANDY BELL\svg-icons-sprite.html ## -->
+
+<style>
+
+.element-outline { 
+  outline: 1px solid magenta;
+}
+.truncated-paragraph {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.capitalize{
+  text-transform: capitalize
+}
+.small-capitals {
+  font-variant: small-caps;
+}
+.block{
+  display:block
+}    
+.visually-hidden{
+  border:0;
+  clip:rect(0 0 0 0);
+  height:0;
+  margin:0;
+  overflow:hidden;
+  padding:0;
+  position:absolute;
+  width:1px;
+  white-space:nowrap
+}    
+
+
+.sprite-demo {
+  font-size: 150%;
+  text-align: center;
+  color: white;
+  background-color: #333;
+}
+.svg-icon {
+  position: relative;
+  top: .125em;
+  flex-shrink: 0;
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+}
+
+</style>
+
+</head>
+<body class="pages">
+
+  <header>
+    <div class="header-content">
+
+      <div class="header-brand">
+        <p>
+          <a href="/" aria-label="GrB Logo" title="return to the home page" style="font-weight: bold;">GrB</a>
+        </p>
+      </div>
+      <div class="header-menu">
+        <p>
+          <a href="/" class="menu" title="Menu link" aria-label="Menu link">
+            <svg class="svg-icon" role="img"><use xlink:href="sprite-symbol-defs.svg#svg-menu"></use></svg> Menu
+          </a>
+        </p>
+      </div>
+
+    </div>
+  </header>
+
+
+  <main id="main-content">
+    <section class="main-content">
+
+      <p class="header-testing-guide" style="color:teal;">
+        <span class="new-time-stamp"></span>&nbsp;
+        <span class="new-view-port"></span>&nbsp;
+        <span class="new-pixel-ratio"></span>&nbsp;
+        <span class="new-page-device"></span>&nbsp;
+        <span class="new-page-orientation"></span>&nbsp;
+        <span class="new-page-browser"></span>&nbsp;
+        <span class="new-page-locale"></span>&nbsp;
+        <span class="new-page-touched"></span>&nbsp;
+      </p>
+
+      <h1>SEO: Home (Page)</h1>
+      <p class="paragraph-lead">Home (page) engagement text goes here</p>
+      <p>Home page content goes here...</p>
+      <p>Tue 29 Aug 2023 04:40:02 PM</p>
+      <h2>Latest Browser Versions 29 Aug 2023</h2>
+      <ul>
+        <li>Chrome 116</li>
+        <li>Safari 16.5</li>
+        <li>Edge 116</li>
+        <li>Firefox 116</li>
+        <li>Opera 101</li>
+      </ul>
+
+      <hr>
+
+      <p class="sprite-demo">External SVG Sprite:&nbsp;&nbsp;
+        <svg class="svg-icon" role="img"><use xlink:href="sprite-symbol-defs.svg#box-arrow-up-right"></use></svg>&nbsp;&nbsp;
+        <svg class="svg-icon" role="img"><use xlink:href="sprite-symbol-defs.svg#card-image"></use></svg>&nbsp;&nbsp;
+        <svg class="svg-icon" role="img"><use xlink:href="sprite-symbol-defs.svg#caret-right"></use></svg>&nbsp;&nbsp;
+        <svg class="svg-icon" role="img"><use xlink:href="sprite-symbol-defs.svg#caret-up"></use></svg>&nbsp;&nbsp;
+        <svg class="svg-icon" role="img"><use xlink:href="sprite-symbol-defs.svg#check"></use></svg>&nbsp;&nbsp;
+        <svg class="svg-icon" role="img"><use xlink:href="sprite-symbol-defs.svg#chevron-left"></use></svg>&nbsp;&nbsp;
+        <svg class="svg-icon" role="img"><use xlink:href="sprite-symbol-defs.svg#chevron-right"></use></svg>&nbsp;&nbsp;
+        <svg class="svg-icon" role="img"><use xlink:href="sprite-symbol-defs.svg#svg-link"></use></svg>&nbsp;&nbsp;
+        <svg class="svg-icon" role="img"><use xlink:href="sprite-symbol-defs.svg#svg-menu"></use></svg>&nbsp;&nbsp;
+        <svg class="svg-icon" role="img"><use xlink:href="sprite-symbol-defs.svg#svg-person"></use></svg>&nbsp;&nbsp;
+      </p>
+
+      <p class="sprite-demo">Functional SVG: &lt;svg role="img"&gt;&lt;title&gt;Good Label&lt;/title&gt; ... &lt;/svg&gt;</p>
+      <p class="sprite-demo">Example: 
+        <svg class="svg-icon" role="img">
+          <use xlink:href="sprite-symbol-defs.svg#svg-person"></use>
+        </svg>
+      </p>
+
+      <p class="sprite-demo">Standalone Decorative SVG: &lt;svg aria-hidden="true" ... &gt;&lt;/svg&gt;</p>
+      <p class="sprite-demo">Example: 
+        <svg class="svg-icon" aria-hidden="true">
+          <use xlink:href="sprite-symbol-defs.svg#check"></use>
+        </svg>
+      </p>
+
+      <p class="sprite-demo">Decorative SVG (Button, link): &lt;a href="/" aria-label="Good Label"&gt;&lt;svg aria-hidden="true" ... &gt;&lt;/svg&gt;&lt;/a&gt;</p>
+      <p class="sprite-demo">Example: 
+        <a href="/" aria-label="Good Label">
+          <svg class="svg-icon" aria-hidden="true">
+            <use xlink:href="sprite-symbol-defs.svg#box-arrow-up-right"></use>
+          </svg>
+        </a>
+      </p>
+
+    <hr>
+
+    <p>&nbsp;<span id="heading"></span></p>
+    <p>&nbsp;<span id="body"></span></p>
+
+	  <hr>
+
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+
+      <div class="footer-copyright">
+        <p>&copy; 1995-2023 GrB</p>
+      </div>
+      <div class="footer-timestamp">
+        <p><span class="audit-trail">Updated: Tue 29 Aug 2023</span></p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="./scripts.js"></script>
+</body>
+</html>

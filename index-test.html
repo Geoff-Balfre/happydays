@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SEO: The page description">
+
+  <title>SEO: The page title, GrB</title>
+  <meta name="author" content="GrB">
+  <meta name="robots" content="noindex,nofollow">
+
+</head>
+<body class="pages">
+
+<p>no content to see here, check console log</p>
+
+<script>
+
+
+console.log("===");
+console.log(navigator.userAgent);
+console.log(navigator.appVersion);
+console.log(navigator.userAgent);
+console.log("===");
+console.log("===");
+
+const e=()=>{let e=navigator.userAgent.toLowerCase();
+return 0<=e.indexOf("msie")?{type:"IE<11",version:Number(e.match(/msie ([\d]+)/)[1])}:e.match(/trident\/.+?rv:(([\d.]+))/)?{type:"IE",version:11}:0<=e.indexOf("edge")?{type:"Edge",version:Number(e.match(/edge\/([\d]+)/)[1])}:0<=e.indexOf("firefox")?{type:"Firefox",version:Number(e.match(/firefox\/([\d]+)/)[1])}:0<=e.indexOf("chrome")?{type:"Chrome",version:Number(e.match(/chrome\/([\d]+)/)[1])}:0<=e.indexOf("opera")?{type:"Opera",version:Number(e.match(/opera.([\d]+)/)[1])}:0<=e.indexOf("Safari")?{type:"Safari",version:Number(e.match(/version\/([\d]+)/)[1])}:{type:e,version:-1}},r=e().type+"("+e().version+")";
+console.log("R: " + r);
+
+console.log("===");
+console.log("===");
+
+console.log();
+console.log(navigator.userAgent);
+
+console.log();
+console.log(navigator.userAgentData);
+console.log();
+console.log('Brands: ' + navigator.userAgentData.brands);
+console.log('Mobile: ' + navigator.userAgentData.mobile);
+console.log('Platform: ' + navigator.userAgentData.platform);
+
+console.log(`Mobile: ${navigator.userAgentData.mobile ? "Mobile" : "Desktop"}`);
+
+
+
+if(document.querySelector(".page-browser")){const e=()=>{let e=navigator.userAgent.toLowerCase();return 0<=e.indexOf("msie")?{type:"IE<11",version:Number(e.match(/msie ([\d]+)/)[1])}:e.match(/trident\/.+?rv:(([\d.]+))/)?{type:"IE",version:11}:0<=e.indexOf("edge")?{type:"Edge",version:Number(e.match(/edge\/([\d]+)/)[1])}:0<=e.indexOf("firefox")?{type:"Firefox",version:Number(e.match(/firefox\/([\d]+)/)[1])}:0<=e.indexOf("chrome")?{type:"Chrome",version:Number(e.match(/chrome\/([\d]+)/)[1])}:0<=e.indexOf("opera")?{type:"Opera",version:Number(e.match(/opera.([\d]+)/)[1])}:0<=e.indexOf("Safari")?{type:"Safari",version:Number(e.match(/version\/([\d]+)/)[1])}:{type:e,version:-1}},r=e().type+"("+e().version+")";document.querySelector(".page-browser").innerHTML=r}
+
+
+
+</script>
+</body>
+</html>
